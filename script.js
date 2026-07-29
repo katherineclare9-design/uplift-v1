@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let content = "";
 
         if (screen === "home") {
+
+            const level = 1;
+            const xp = 0;
+            const xpNeeded = 500;
+            const streak = 0;
+
+            const percent = (xp / xpNeeded) * 100;
+
             content = `
                 <section class="home">
 
@@ -16,26 +24,44 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p>Lift Yourself Higher Every Day</p>
 
                     <div class="card">
-                        <h3>⭐ Level 1</h3>
-                        <p>0 / 500 XP</p>
+                        <h3>⭐ Level ${level}</h3>
+                        <p>${xp} / ${xpNeeded} XP</p>
 
                         <div class="xp-bar">
-                            <div class="xp-fill"></div>
+                            <div class="xp-fill" style="width:${percent}%"></div>
                         </div>
                     </div>
 
                     <div class="card">
                         <h3>🔥 Daily Streak</h3>
-                        <h1>0 Days</h1>
+                        <h1>${streak} Days</h1>
                     </div>
 
                     <div class="card">
                         <h3>✅ Today's Checklist</h3>
 
-                        <label><input type="checkbox"> Complete Workout</label><br><br>
-                        <label><input type="checkbox"> Drink Water Goal</label><br><br>
-                        <label><input type="checkbox"> Nutrition Goal</label><br><br>
-                        <label><input type="checkbox"> Journal Entry</label>
+                        <label>
+                            <input type="checkbox">
+                            Complete Workout
+                        </label>
+                        <br><br>
+
+                        <label>
+                            <input type="checkbox">
+                            Drink Water Goal
+                        </label>
+                        <br><br>
+
+                        <label>
+                            <input type="checkbox">
+                            Nutrition Goal
+                        </label>
+                        <br><br>
+
+                        <label>
+                            <input type="checkbox">
+                            Journal Entry
+                        </label>
                     </div>
 
                     <div class="card">
@@ -43,7 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p>No badges earned yet.</p>
                     </div>
 
-                    <button id="startButton">Start Today's Workout</button>
+                    <button id="startButton">
+                        Start Today's Workout
+                    </button>
 
                 </section>
             `;
@@ -88,20 +116,26 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "settings") {
             content = `
                 <section class="home">
+
                     <h2>⚙️ Settings</h2>
 
-                    <h3>Workout Mode</h3>
+                    <div class="card">
+                        <h3>Workout Mode</h3>
 
-                    <button>💖 Regular</button>
-                    <button>🤍 Vacation</button>
-                    <button>❤️ Period</button>
+                        <button>💖 Regular</button>
+                        <button>🤍 Vacation</button>
+                        <button>❤️ Period</button>
+                    </div>
 
-                    <hr>
+                    <div class="card">
+                        <h3>Nutrition</h3>
 
-                    <label>
-                        <input type="checkbox">
-                        🥗 ARFID Mode
-                    </label>
+                        <label>
+                            <input type="checkbox">
+                            🥗 ARFID Mode
+                        </label>
+                    </div>
+
                 </section>
             `;
         }
@@ -122,9 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const workoutButton = document.getElementById("startButton");
 
         if (workoutButton) {
-            workoutButton.onclick = () => {
+            workoutButton.addEventListener("click", () => {
                 alert("Workout feature coming soon! 💪");
-            };
+            });
         }
     }
 
