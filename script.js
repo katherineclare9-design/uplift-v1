@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let content = "";
 
+        // ==========================
+        // HOME
+        // ==========================
         if (screen === "home") {
 
             const level = 1;
@@ -38,54 +41,76 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
 
                     <div class="card">
-                        <h3>✅ Today's Checklist</h3>
-
-                        <label>
-                            <input type="checkbox">
-                            Complete Workout
-                        </label>
-                        <br><br>
-
-                        <label>
-                            <input type="checkbox">
-                            Drink Water Goal
-                        </label>
-                        <br><br>
-
-                        <label>
-                            <input type="checkbox">
-                            Nutrition Goal
-                        </label>
-                        <br><br>
-
-                        <label>
-                            <input type="checkbox">
-                            Journal Entry
-                        </label>
-                    </div>
-
-                    <div class="card">
                         <h3>🏅 Latest Badge</h3>
                         <p>No badges earned yet.</p>
                     </div>
 
-                    <button id="startButton">
-                        Start Today's Workout
-                    </button>
-
                 </section>
             `;
         }
 
+        // ==========================
+        // TRAINING
+        // ==========================
         if (screen === "training") {
+
             content = `
                 <section class="home">
+
                     <h2>💪 Training</h2>
-                    <p>Your workouts will appear here.</p>
+
+                    <div class="card">
+                        <h3>🏋️ Strength</h3>
+
+                        <label><input type="checkbox"> Upper Body</label><br><br>
+                        <label><input type="checkbox"> Lower Body</label><br><br>
+                        <label><input type="checkbox"> Core</label><br><br>
+                        <label><input type="checkbox"> Full Body</label>
+                    </div>
+
+                    <div class="card">
+                        <h3>📣 Cheer</h3>
+
+                        <label><input type="checkbox"> Backspot</label><br><br>
+                        <label><input type="checkbox"> Stunts</label><br><br>
+                        <label><input type="checkbox"> Jumps</label><br><br>
+                        <label><input type="checkbox"> Motions</label><br><br>
+                        <label><input type="checkbox"> Conditioning</label>
+                    </div>
+
+                    <div class="card">
+                        <h3>🤸 Flexibility</h3>
+
+                        <label><input type="checkbox"> Splits</label><br><br>
+                        <label><input type="checkbox"> Pike</label><br><br>
+                        <label><input type="checkbox"> Straddle</label><br><br>
+                        <label><input type="checkbox"> Mobility</label><br><br>
+                        <label><input type="checkbox"> Recovery Stretch</label>
+                    </div>
+
+                    <div class="card">
+                        <h3>❤️ Recovery</h3>
+
+                        <label><input type="checkbox"> Recovery Workout</label><br><br>
+                        <label><input type="checkbox"> Light Stretch</label>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏖️ Vacation Workout</h3>
+
+                        <label><input type="checkbox"> Deep Core Activation</label><br><br>
+                        <label><input type="checkbox"> 1 Minute Plank</label><br><br>
+                        <label><input type="checkbox"> 45 Seconds Russian Twists</label><br><br>
+                        <label><input type="checkbox"> 10 Push-ups</label>
+                    </div>
+
                 </section>
             `;
         }
 
+        // ==========================
+        // BADGES
+        // ==========================
         if (screen === "badges") {
             content = `
                 <section class="home">
@@ -95,6 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
 
+        // ==========================
+        // DIARY
+        // ==========================
         if (screen === "diary") {
             content = `
                 <section class="home">
@@ -104,6 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
 
+        // ==========================
+        // PROFILE
+        // ==========================
         if (screen === "profile") {
             content = `
                 <section class="home">
@@ -113,6 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
 
+        // ==========================
+        // SETTINGS
+        // ==========================
         if (screen === "settings") {
             content = `
                 <section class="home">
@@ -152,14 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button onclick="showScreen('settings')">⚙️<br>Settings</button>
             </nav>
         `;
-
-        const workoutButton = document.getElementById("startButton");
-
-        if (workoutButton) {
-            workoutButton.addEventListener("click", () => {
-                alert("Workout feature coming soon! 💪");
-            });
-        }
     }
 
     window.showScreen = showScreen;
