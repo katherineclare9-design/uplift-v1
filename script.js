@@ -11,19 +11,40 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "home") {
             content = `
                 <section class="home">
-                    <h2>🏠 Home</h2>
 
-                    <h3>Welcome to UpLift!</h3>
+                    <h2>💖 Good Morning!</h2>
+                    <p>Lift Yourself Higher Every Day</p>
 
-                    <p>💖 Lift Yourself Higher Every Day</p>
+                    <div class="card">
+                        <h3>⭐ Level 1</h3>
+                        <p>0 / 500 XP</p>
 
-                    <hr>
+                        <div class="xp-bar">
+                            <div class="xp-fill"></div>
+                        </div>
+                    </div>
 
-                    <p><strong>⭐ Level:</strong> 1</p>
-                    <p><strong>⚡ XP:</strong> 0 / 500</p>
-                    <p><strong>🔥 Streak:</strong> 0 Days</p>
+                    <div class="card">
+                        <h3>🔥 Daily Streak</h3>
+                        <h1>0 Days</h1>
+                    </div>
+
+                    <div class="card">
+                        <h3>✅ Today's Checklist</h3>
+
+                        <label><input type="checkbox"> Complete Workout</label><br><br>
+                        <label><input type="checkbox"> Drink Water Goal</label><br><br>
+                        <label><input type="checkbox"> Nutrition Goal</label><br><br>
+                        <label><input type="checkbox"> Journal Entry</label>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏅 Latest Badge</h3>
+                        <p>No badges earned yet.</p>
+                    </div>
 
                     <button id="startButton">Start Today's Workout</button>
+
                 </section>
             `;
         }
@@ -69,17 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 <section class="home">
                     <h2>⚙️ Settings</h2>
 
-                    <p>Mode</p>
+                    <h3>Workout Mode</h3>
 
-                    <button>Regular</button>
-                    <button>Vacation</button>
-                    <button>Period</button>
+                    <button>💖 Regular</button>
+                    <button>🤍 Vacation</button>
+                    <button>❤️ Period</button>
 
                     <hr>
 
                     <label>
                         <input type="checkbox">
-                        ARFID Mode
+                        🥗 ARFID Mode
                     </label>
                 </section>
             `;
