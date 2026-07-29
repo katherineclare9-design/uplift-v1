@@ -25,61 +25,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             content = `
-
                 <section class="home">
 
                     <h2>💖 Good Morning!</h2>
-
-                    <p>
-                        Lift Yourself Higher Every Day
-                    </p>
-
+                    <p>Lift Yourself Higher Every Day</p>
 
                     <div class="card">
 
                         <h3>⭐ Level ${level}</h3>
-
-                        <p>
-                            ${xp} / ${xpNeeded} XP
-                        </p>
-
+                        <p>${xp} / ${xpNeeded} XP</p>
 
                         <div class="xp-bar">
-
-                            <div 
-                                class="xp-fill"
-                                style="width:${percent}%">
-                            </div>
-
+                            <div class="xp-fill" style="width:${percent}%"></div>
                         </div>
 
                     </div>
 
 
-
                     <div class="card">
 
                         <h3>🔥 Daily Streak</h3>
-
                         <h1>${streak} Days</h1>
 
                     </div>
 
 
-
                     <div class="card">
 
                         <h3>🏅 Latest Badge</h3>
-
-                        <p>
-                            No badges earned yet.
-                        </p>
+                        <p>No badges earned yet.</p>
 
                     </div>
 
-
                 </section>
-
             `;
         }
 
@@ -91,56 +69,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (screen === "training") {
 
-
             let workoutCards = "";
 
 
             workouts.forEach(workout => {
 
-
                 workoutCards += `
 
                     <div class="card">
 
-                        <h3>
-                            ${workout.name}
-                        </h3>
-
+                        <h3>${workout.name}</h3>
 
                         <p>
-                            📂 Category:
-                            ${workout.category}
+                            📂 Category: ${workout.category}
+                        </p>
+
+                        <p>
+                            💪 Type: ${workout.type}
+                        </p>
+
+                        <p>
+                            ⭐ XP Reward: ${workout.xp}
                         </p>
 
 
-                        <p>
-                            💪 Type:
-                            ${workout.type}
-                        </p>
-
-
-                        <p>
-                            ⭐ XP Reward:
-                            ${workout.xp}
-                        </p>
-
-
-
-                        <button 
-                            onclick="completeWorkout('${workout.id}')">
+                        <button class="complete-workout"
+                            data-id="${workout.id}">
 
                             Complete Workout
 
                         </button>
 
-
                     </div>
 
                 `;
 
-
             });
-
 
 
             content = `
@@ -149,19 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <h2>💪 Training</h2>
 
-
                     <p>
                         Choose your workout.
                     </p>
 
-
                     ${workoutCards}
-
 
                 </section>
 
             `;
-
         }
 
 
@@ -173,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "badges") {
 
             content = `
-
                 <section class="home">
 
                     <h2>🏅 Badge Gallery</h2>
@@ -183,9 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </p>
 
                 </section>
-
             `;
-
         }
 
 
@@ -197,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "diary") {
 
             content = `
-
                 <section class="home">
 
                     <h2>📖 Diary</h2>
@@ -207,9 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </p>
 
                 </section>
-
             `;
-
         }
 
 
@@ -221,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "profile") {
 
             content = `
-
                 <section class="home">
 
                     <h2>👤 Profile</h2>
@@ -231,9 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </p>
 
                 </section>
-
             `;
-
         }
 
 
@@ -245,46 +196,33 @@ document.addEventListener("DOMContentLoaded", () => {
         if (screen === "settings") {
 
             content = `
-
                 <section class="home">
-
 
                     <h2>⚙️ Settings</h2>
 
 
-
                     <div class="card">
 
-                        <h3>
-                            Workout Mode
-                        </h3>
-
+                        <h3>Workout Mode</h3>
 
                         <button>
                             💖 Regular
                         </button>
 
-
                         <button>
                             🤍 Vacation
                         </button>
-
 
                         <button>
                             ❤️ Period
                         </button>
 
-
                     </div>
-
 
 
                     <div class="card">
 
-                        <h3>
-                            Nutrition
-                        </h3>
-
+                        <h3>Nutrition</h3>
 
                         <label>
 
@@ -294,17 +232,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         </label>
 
-
                     </div>
 
-
-
                 </section>
-
             `;
-
         }
-
 
 
 
@@ -315,69 +247,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <nav class="bottom-nav">
 
-                <button onclick="showScreen('home')">
-                    🏠<br>
-                    Home
+                <button data-screen="home">
+                    🏠<br>Home
                 </button>
 
-
-                <button onclick="showScreen('training')">
-                    💪<br>
-                    Training
+                <button data-screen="training">
+                    💪<br>Training
                 </button>
 
-
-                <button onclick="showScreen('badges')">
-                    🏅<br>
-                    Badges
+                <button data-screen="badges">
+                    🏅<br>Badges
                 </button>
 
-
-                <button onclick="showScreen('diary')">
-                    📖<br>
-                    Diary
+                <button data-screen="diary">
+                    📖<br>Diary
                 </button>
 
-
-                <button onclick="showScreen('profile')">
-                    👤<br>
-                    Profile
+                <button data-screen="profile">
+                    👤<br>Profile
                 </button>
 
-
-                <button onclick="showScreen('settings')">
-                    ⚙️<br>
-                    Settings
+                <button data-screen="settings">
+                    ⚙️<br>Settings
                 </button>
-
 
             </nav>
 
         `;
 
+
+
+        // Navigation buttons
+
+        document.querySelectorAll(".bottom-nav button").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                showScreen(button.dataset.screen);
+
+            });
+
+        });
+
+
+
+        // Workout buttons
+
+        document.querySelectorAll(".complete-workout").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const workout = workouts.find(
+                    item => item.id === button.dataset.id
+                );
+
+
+                alert(
+                    `${workout.name} completed! +${workout.xp} XP ⭐`
+                );
+
+            });
+
+        });
+
+
     }
 
-
-
-    function completeWorkout(id) {
-
-
-        const workout = workouts.find(
-            workout => workout.id === id
-        );
-
-
-        alert(
-            `${workout.name} completed! +${workout.xp} XP ⭐`
-        );
-
-    }
-
-
-
-    window.showScreen = showScreen;
-
-    window.completeWorkout = completeWorkout;
 
 
     showScreen("home");
